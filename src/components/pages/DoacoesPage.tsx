@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Donate, Qr-code, Clock, Target, Heart } from 'lucide-react';
+import { Donate, QrCode, Clock, Target, Heart } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -126,13 +126,13 @@ const DoacoesPage = () => {
         <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
           <CardHeader className="text-center pb-3">
             <CardTitle className="text-lg text-green-800 flex items-center justify-center gap-2">
-              <Qr-code size={20} />
+              <QrCode size={20} />
               Contribuição via PIX
             </CardTitle>
           </CardHeader>
           <CardContent className="text-center space-y-4">
             <div className="w-32 h-32 bg-white border-2 border-green-300 rounded-lg mx-auto flex items-center justify-center">
-              <Qr-code size={80} className="text-green-600" />
+              <QrCode size={80} className="text-green-600" />
             </div>
             <div className="space-y-2">
               <p className="text-sm text-gray-600">Chave PIX:</p>
