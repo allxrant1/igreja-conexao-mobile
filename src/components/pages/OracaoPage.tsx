@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Prayer, Plus, Heart, Share2, MessageSquare } from 'lucide-react';
+import { Hands, Plus, Heart, Share2, MessageSquare } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -86,7 +85,7 @@ const OracaoPage = () => {
             <h1 className="text-2xl font-bold">Oração</h1>
             <p className="text-blue-100">Pedidos, testemunhos e intercessão</p>
           </div>
-          <Prayer className="w-8 h-8 text-blue-200" />
+          <Hands className="w-8 h-8 text-blue-200" />
         </div>
       </div>
 
@@ -171,7 +170,7 @@ const OracaoPage = () => {
                         )}
                       </div>
                       <div className="flex items-center gap-1">
-                        <Prayer size={12} />
+                        <Hands size={12} />
                         <span>{item.oracoes}</span>
                       </div>
                     </div>
@@ -254,7 +253,7 @@ const OracaoPage = () => {
                       <p className="text-gray-600 text-sm">{item.tema}</p>
                     </div>
                     <Button variant="outline" size="sm">
-                      <Prayer size={14} className="mr-2" />
+                      <Hands size={14} className="mr-2" />
                       Orar
                     </Button>
                   </div>

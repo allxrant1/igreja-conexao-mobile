@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Donate, QrCode, Clock, Target, Heart } from 'lucide-react';
+import { Heart, QrCode, Clock, Target, DollarSign } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -59,7 +58,7 @@ const DoacoesPage = () => {
             <h1 className="text-2xl font-bold">Contribuições</h1>
             <p className="text-amber-100">Seja parte da obra de Deus</p>
           </div>
-          <Donate className="w-8 h-8 text-amber-200" />
+          <Heart className="w-8 h-8 text-amber-200" />
         </div>
       </div>
 
@@ -115,7 +114,7 @@ const DoacoesPage = () => {
             className="w-full bg-church-accent hover:bg-church-accent/90 text-white h-12 text-lg font-semibold"
             disabled={!valorPersonalizado}
           >
-            <Donate className="w-5 h-5 mr-2" />
+            <DollarSign className="w-5 h-5 mr-2" />
             Contribuir {valorPersonalizado && `R$ ${valorPersonalizado}`}
           </Button>
         </div>

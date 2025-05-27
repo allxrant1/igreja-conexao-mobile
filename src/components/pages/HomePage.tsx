@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Calendar, Clock, MapPin, Star, Share2 } from 'lucide-react';
+import { Calendar, Clock, MapPin, Star, Share2, Hands, Heart } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -144,7 +143,7 @@ const HomePage = () => {
           <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 hover:shadow-md transition-shadow cursor-pointer">
             <CardContent className="p-4 text-center">
               <div className="w-12 h-12 bg-church-primary rounded-full mx-auto mb-2 flex items-center justify-center">
-                <Prayer className="w-6 h-6 text-white" />
+                <Hands className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-semibold text-gray-800 text-sm">Pedido de Oração</h3>
             </CardContent>
@@ -153,7 +152,7 @@ const HomePage = () => {
           <Card className="bg-gradient-to-br from-amber-50 to-amber-100 border-amber-200 hover:shadow-md transition-shadow cursor-pointer">
             <CardContent className="p-4 text-center">
               <div className="w-12 h-12 bg-church-accent rounded-full mx-auto mb-2 flex items-center justify-center">
-                <Donate className="w-6 h-6 text-white" />
+                <Heart className="w-6 h-6 text-white" />
               </div>
               <h3 className="font-semibold text-gray-800 text-sm">Contribuir</h3>
             </CardContent>
