@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Home, Calendar, Music, Hands, Heart, User } from 'lucide-react';
+import { Home, Calendar, Music, Hand, Heart, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import HomePage from './pages/HomePage';
 import CultosPage from './pages/CultosPage';
@@ -17,7 +17,7 @@ const ChurchApp = () => {
     { id: 'home' as PageType, icon: Home, label: 'Início' },
     { id: 'cultos' as PageType, icon: Calendar, label: 'Cultos' },
     { id: 'mensagens' as PageType, icon: Music, label: 'Mensagens' },
-    { id: 'oracao' as PageType, icon: Hands, label: 'Oração' },
+    { id: 'oracao' as PageType, icon: Hand, label: 'Oração' },
     { id: 'doacoes' as PageType, icon: Heart, label: 'Doações' },
     { id: 'comunidade' as PageType, icon: User, label: 'Comunidade' },
   ];
