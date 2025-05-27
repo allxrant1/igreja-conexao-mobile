@@ -1,6 +1,9 @@
+
 import React, { useState } from 'react';
 import { Home, Calendar, Music, Hand, Heart, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useAuth } from '@/contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import CultosPage from './pages/CultosPage';
 import MensagensPage from './pages/MensagensPage';
@@ -12,6 +15,8 @@ type PageType = 'home' | 'cultos' | 'mensagens' | 'oracao' | 'doacoes' | 'comuni
 
 const ChurchApp = () => {
   const [currentPage, setCurrentPage] = useState<PageType>('home');
+  const { user } = useAuth();
+  const navigate = useNavigate();
 
   const navigationItems = [
     { id: 'home' as PageType, icon: Home, label: 'Início' },
@@ -41,8 +46,35 @@ const ChurchApp = () => {
     }
   };
 
+  const handleProfileClick = () => {
+    navigate('/profile');
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col max-w-md mx-auto relative">
+      {/* Header with user info */}
+      <div className="bg-white border-b border-gray-200 px-4 py-3 flex justify-between items-center">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 bg-church-primary rounded-full flex items-center justify-center">
+            <User className="w-4 h-4 text-white" />
+          </div>
+          <div>
+            <p className="text-sm font-medium text-gray-900">
+              Olá, {user?.email?.split('@')[0]}!
+            </p>
+            <p className="text-xs text-gray-500">Igreja Comunidade</p>
+          </div>
+        </div>
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={handleProfileClick}
+          className="text-church-primary hover:bg-church-primary/10"
+        >
+          <User size={16} />
+        </Button>
+      </div>
+
       {/* Main Content */}
       <div className="flex-1 pb-20 overflow-y-auto">
         {renderPage()}

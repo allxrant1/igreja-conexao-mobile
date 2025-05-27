@@ -9,7 +9,139 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      donations: {
+        Row: {
+          amount: number
+          created_at: string
+          currency: string | null
+          description: string | null
+          id: string
+          is_recurring: boolean | null
+          payment_method: string | null
+          payment_status: string | null
+          receipt_url: string | null
+          recurring_frequency: string | null
+          transaction_id: string | null
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          currency?: string | null
+          description?: string | null
+          id?: string
+          is_recurring?: boolean | null
+          payment_method?: string | null
+          payment_status?: string | null
+          receipt_url?: string | null
+          recurring_frequency?: string | null
+          transaction_id?: string | null
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          currency?: string | null
+          description?: string | null
+          id?: string
+          is_recurring?: boolean | null
+          payment_method?: string | null
+          payment_status?: string | null
+          receipt_url?: string | null
+          recurring_frequency?: string | null
+          transaction_id?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "donations_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      event_participations: {
+        Row: {
+          attendance_confirmed: boolean | null
+          created_at: string
+          event_id: string
+          event_name: string
+          id: string
+          participation_date: string
+          user_id: string
+        }
+        Insert: {
+          attendance_confirmed?: boolean | null
+          created_at?: string
+          event_id: string
+          event_name: string
+          id?: string
+          participation_date?: string
+          user_id: string
+        }
+        Update: {
+          attendance_confirmed?: boolean | null
+          created_at?: string
+          event_id?: string
+          event_name?: string
+          id?: string
+          participation_date?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "event_participations_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          address: string | null
+          bio: string | null
+          birth_date: string | null
+          created_at: string
+          first_name: string | null
+          id: string
+          last_name: string | null
+          notification_preferences: Json | null
+          phone: string | null
+          profile_photo_url: string | null
+          updated_at: string
+        }
+        Insert: {
+          address?: string | null
+          bio?: string | null
+          birth_date?: string | null
+          created_at?: string
+          first_name?: string | null
+          id: string
+          last_name?: string | null
+          notification_preferences?: Json | null
+          phone?: string | null
+          profile_photo_url?: string | null
+          updated_at?: string
+        }
+        Update: {
+          address?: string | null
+          bio?: string | null
+          birth_date?: string | null
+          created_at?: string
+          first_name?: string | null
+          id?: string
+          last_name?: string | null
+          notification_preferences?: Json | null
+          phone?: string | null
+          profile_photo_url?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
